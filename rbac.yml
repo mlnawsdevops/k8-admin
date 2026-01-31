@@ -24,4 +24,4 @@ roleRef: # defining role
 subjects: # defining user
 - apiGroup: rbac.authorization.k8s.io
   kind: User
-  name: suresh 
+  name: wuresh 
