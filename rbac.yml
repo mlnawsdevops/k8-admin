@@ -1,0 +1,27 @@
+# role
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: expense-trainee
+  namespace: expense
+rules:
+- apiGroups: [""] # "" indicates the core API group like v1 objects such as pods, deployments, services..
+  resources: ["pods"]
+  verbs: ["get","watch","list"]
+
+
+# rolebinding
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding 
+metadata:
+  name: expense-trainee
+  namespace: expense
+roleRef: # defining role
+  apiGroup: rbac.authorization.k8s.io/v1
+  kind: Role
+  name: expense-trainee
+subjects: # defining user
+- apiGroup: rbac.authorization.k8s.io/v1
+  kind: User
+  name: suresh 
