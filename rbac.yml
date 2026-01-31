@@ -18,10 +18,10 @@ metadata:
   name: expense-trainee
   namespace: expense
 roleRef: # defining role
-  apiGroup: rbac.authorization.k8s.io/v1
+  apiGroup: rbac.authorization.k8s.io
   kind: Role
   name: expense-trainee
 subjects: # defining user
-- apiGroup: rbac.authorization.k8s.io/v1
+- apiGroup: rbac.authorization.k8s.io
   kind: User
   name: suresh 
