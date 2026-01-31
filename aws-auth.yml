@@ -1,0 +1,25 @@
+# kubectl get configmap aws-auth -n kube-system -o yaml
+# kubectl edit configmap aws-auth -n kube-system -o yaml
+# only add mapUsers section in the yaml
+
+apiVersion: v1
+data:
+  mapRoles: |
+    - rolearn: arn:aws:iam::529088275803:role/eksctl-expense-nodegroup-expense-NodeInstanceRole-VWue6GfYcr7j
+      groups:
+      - system:bootstrappers
+      - system:nodes
+      username: system:node:{{EC2PrivateDNSName}}
+  # add mapUsers and take userarn of suresh from IAM 
+  mapUsers: |
+    - groups:
+      - expense-trainee
+      userarn: arn:aws:iam::529088275803:user/suresh 
+      username: suresh
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2026-01-31T13:45:14Z"
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: "10048"
+  uid: 5b0d2017-0e73-4bbd-b953-52cd821e9506
