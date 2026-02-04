@@ -10,4 +10,5 @@
 9. kubectl get clusterrolebinding
 10. create expense instance 
 11. aws configure and give suresh secret key and access key
+12. aws eks update-kubeconfig --region us-east-1 --name <cluster-name>
 12. check the resources access
