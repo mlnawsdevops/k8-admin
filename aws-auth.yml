@@ -10,7 +10,7 @@ data:
       - system:bootstrappers
       - system:nodes
       username: system:node:{{EC2PrivateDNSName}}
-  # add mapUsers and take userarn of suresh from IAM 
+  # add mapUsers and take userarn of suresh and ramesh from IAM 
   mapUsers: |
     - groups:
       - expense-trainee
